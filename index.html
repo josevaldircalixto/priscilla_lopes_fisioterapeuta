@@ -1,0 +1,1620 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Fisioterapeuta Priscilla Lopes – Fisioterapia Domiciliar em São Paulo
+    </title>
+    <meta
+      name="description"
+      content="Fisioterapia domiciliar especializada em idosos. 30 anos de experiência. Atendimento em São Paulo, no conforto da sua residência."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --cream: #faf7f2;
+        --warm: #f5ede0;
+        --sand: #e8d5bb;
+        --green: #3d6b52;
+        --green-l: #5a8f6e;
+        --green-d: #2a4d3a;
+        --gold: #c4965a;
+        --text: #2c2419;
+        --muted: #7a6a58;
+        --white: #ffffff;
+        --radius: 12px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 6vw;
+        background: rgba(250, 247, 242, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(196, 150, 90, 0.18);
+        transition: box-shadow 0.3s;
+      }
+      nav.scrolled {
+        box-shadow: 0 4px 30px rgba(61, 107, 82, 0.1);
+      }
+
+      .nav-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+      .nav-brand span:first-child {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--green-d);
+      }
+      .nav-brand span:last-child {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 500;
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--green);
+        color: var(--white);
+        padding: 10px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--green-d);
+        transform: translateY(-1px);
+      }
+      .nav-cta svg {
+        flex-shrink: 0;
+      }
+
+      /* ─── HERO ─── */
+      #hero {
+        min-height: 100svh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 120px 6vw 80px;
+        gap: 60px;
+        position: relative;
+        overflow: hidden;
+      }
+      #hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 80% 50%,
+            rgba(93, 143, 110, 0.1) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 40% 40% at 15% 20%,
+            rgba(196, 150, 90, 0.07) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+
+      .hero-text {
+        position: relative;
+        z-index: 1;
+      }
+      .hero-eyebrow {
+        display: inline-block;
+        background: var(--green);
+        color: var(--white);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 50px;
+        margin-bottom: 28px;
+        font-weight: 500;
+      }
+      .hero-text h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 300;
+        line-height: 1.15;
+        color: var(--green-d);
+        margin-bottom: 20px;
+      }
+      .hero-text h1 em {
+        font-style: italic;
+        color: var(--gold);
+        font-weight: 400;
+      }
+      .hero-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--muted);
+        max-width: 480px;
+        margin-bottom: 40px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        background: var(--green);
+        color: var(--white);
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        transition: all 0.25s;
+        box-shadow: 0 6px 24px rgba(61, 107, 82, 0.28);
+      }
+      .btn-primary:hover {
+        background: var(--green-d);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(61, 107, 82, 0.36);
+      }
+      .btn-secondary {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: var(--green);
+        padding: 15px 26px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: 1.5px solid var(--green);
+        transition: all 0.25s;
+      }
+      .btn-secondary:hover {
+        background: var(--green);
+        color: var(--white);
+      }
+
+      .hero-trust {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 44px;
+        padding-top: 32px;
+        border-top: 1px solid var(--sand);
+      }
+      .trust-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .trust-item strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--green);
+      }
+      .trust-item span {
+        font-size: 0.72rem;
+        color: var(--muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .trust-sep {
+        width: 1px;
+        height: 44px;
+        background: var(--sand);
+      }
+
+      .hero-image {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .hero-img-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+      }
+      .hero-img-bg {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        height: 85%;
+        background: linear-gradient(145deg, var(--green-l), var(--green));
+        border-radius: 200px 200px 120px 120px;
+        opacity: 0.15;
+      }
+      .hero-img-wrap img {
+        position: relative;
+        width: 100%;
+        border-radius: 200px 200px 100px 100px;
+        object-fit: cover;
+        display: block;
+        filter: drop-shadow(0 20px 40px rgba(61, 107, 82, 0.2));
+      }
+      .hero-badge {
+        position: absolute;
+        bottom: 30px;
+        right: -20px;
+        background: var(--white);
+        border-radius: 16px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid rgba(196, 150, 90, 0.2);
+        animation: float 4s ease-in-out infinite;
+      }
+      .hero-badge-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--green), var(--green-l));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1rem;
+      }
+      .hero-badge-text strong {
+        display: block;
+        font-size: 0.88rem;
+        color: var(--text);
+        font-weight: 500;
+      }
+      .hero-badge-text span {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* ─── SECTION SHARED ─── */
+      section {
+        padding: 90px 6vw;
+      }
+      .section-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 500;
+        margin-bottom: 14px;
+      }
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--green-d);
+        margin-bottom: 18px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .section-sub {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 560px;
+      }
+
+      /* ─── PAIN POINTS ─── */
+      #dores {
+        background: var(--green-d);
+        padding: 70px 6vw;
+      }
+      #dores .section-tag {
+        color: var(--sand);
+      }
+      #dores .section-title {
+        color: var(--cream);
+      }
+      #dores .section-sub {
+        color: rgba(250, 247, 242, 0.7);
+      }
+
+      .pain-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 48px;
+      }
+      .pain-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius);
+        padding: 28px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: background 0.25s;
+      }
+      .pain-card:hover {
+        background: rgba(255, 255, 255, 0.09);
+      }
+      .pain-icon {
+        font-size: 1.6rem;
+        margin-bottom: 14px;
+      }
+      .pain-card h3 {
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: var(--cream);
+        margin-bottom: 8px;
+      }
+      .pain-card p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: rgba(250, 247, 242, 0.6);
+      }
+
+      /* ─── SOBRE ─── */
+      #sobre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .sobre-visual {
+        position: relative;
+      }
+      .sobre-img-frame {
+        border-radius: 24px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        background: var(--sand);
+      }
+      .sobre-img-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .sobre-cred {
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        background: var(--green);
+        color: var(--white);
+        border-radius: 16px;
+        padding: 20px 22px;
+        box-shadow: 0 12px 40px rgba(61, 107, 82, 0.35);
+      }
+      .sobre-cred p {
+        font-size: 0.7rem;
+        opacity: 0.8;
+        margin-bottom: 4px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .sobre-cred strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 300;
+        display: block;
+      }
+
+      .sobre-text .section-sub {
+        max-width: none;
+        margin-bottom: 28px;
+      }
+      .credentials {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 32px;
+      }
+      .cred-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--warm);
+        border-radius: 10px;
+        border-left: 3px solid var(--green);
+      }
+      .cred-item svg {
+        color: var(--green);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .cred-item div {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+      .cred-item div strong {
+        display: block;
+        color: var(--text);
+        font-size: 0.88rem;
+        margin-bottom: 2px;
+      }
+
+      /* ─── SERVIÇOS ─── */
+      #servicos {
+        background: var(--warm);
+      }
+      .services-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .services-header .section-sub {
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .service-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 40px 32px;
+        border: 1px solid rgba(196, 150, 90, 0.15);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--green), var(--green-l));
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(61, 107, 82, 0.15);
+      }
+      .service-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3rem;
+        font-weight: 300;
+        color: rgba(61, 107, 82, 0.12);
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .service-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--green-d);
+        margin-bottom: 14px;
+      }
+      .service-card p {
+        font-size: 0.85rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+      .service-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 22px;
+      }
+      .service-tag {
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: rgba(61, 107, 82, 0.08);
+        color: var(--green);
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-weight: 500;
+      }
+
+      /* ─── COMO FUNCIONA ─── */
+      #como {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 36px;
+      }
+      .step {
+        display: flex;
+        gap: 22px;
+        padding-bottom: 32px;
+        position: relative;
+      }
+      .step:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 48px;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(var(--sand), transparent);
+      }
+      .step-num {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 0.82rem;
+        font-weight: 600;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        box-shadow: 0 4px 14px rgba(61, 107, 82, 0.3);
+      }
+      .step-content h3 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .step-content p {
+        font-size: 0.83rem;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+
+      .como-visual {
+        background: linear-gradient(155deg, var(--green-d), var(--green));
+        border-radius: 28px;
+        padding: 50px 40px;
+        color: var(--white);
+      }
+      .como-visual h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 8px;
+      }
+      .como-visual p {
+        font-size: 0.88rem;
+        opacity: 0.8;
+        margin-bottom: 36px;
+        line-height: 1.6;
+      }
+      .como-features {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .como-feat {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 14px 16px;
+      }
+      .como-feat-icon {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+      }
+      .como-feat span {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      /* ─── DEPOIMENTOS ─── */
+      #depoimentos {
+        background: var(--cream);
+      }
+      .dep-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .dep-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .dep-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 32px 28px;
+        border: 1px solid rgba(232, 213, 187, 0.6);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .dep-stars {
+        color: var(--gold);
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+      }
+      .dep-text {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        color: var(--muted);
+        font-style: italic;
+        flex: 1;
+      }
+      .dep-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 16px;
+        border-top: 1px solid var(--sand);
+      }
+      .dep-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--green-l), var(--green));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+      .dep-author div strong {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--text);
+        font-weight: 500;
+      }
+      .dep-author div span {
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      /* ─── CTA FINAL ─── */
+      #cta {
+        background: linear-gradient(
+          135deg,
+          var(--green-d) 0%,
+          var(--green) 100%
+        );
+        text-align: center;
+        padding: 100px 6vw;
+        position: relative;
+        overflow: hidden;
+      }
+      #cta::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -20%;
+        right: -20%;
+        aspect-ratio: 1;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.04) 0%,
+          transparent 60%
+        );
+      }
+      #cta .section-tag {
+        color: var(--sand);
+      }
+      #cta .section-title {
+        color: var(--white);
+        max-width: 640px;
+        margin: 0 auto 16px;
+      }
+      #cta .section-sub {
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+      .cta-group {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn-cta-main {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--white);
+        color: var(--green-d);
+        padding: 16px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 600;
+        transition: all 0.25s;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+      .btn-cta-main:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+      }
+      .btn-cta-sec {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        padding: 16px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 500;
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.25s;
+      }
+      .btn-cta-sec:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: var(--text);
+        color: rgba(250, 247, 242, 0.7);
+        padding: 50px 6vw 30px;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 28px;
+      }
+      .footer-brand span:first-child {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--cream);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .footer-brand span.tagline {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 16px;
+      }
+      .footer-brand p {
+        font-size: 0.82rem;
+        line-height: 1.65;
+        max-width: 300px;
+      }
+      .footer-col h4 {
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--cream);
+        margin-bottom: 18px;
+        font-weight: 500;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul li {
+        font-size: 0.83rem;
+      }
+      .footer-col ul li a {
+        color: rgba(250, 247, 242, 0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+      }
+      .social-links {
+        display: flex;
+        gap: 12px;
+      }
+      .social-link {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(250, 247, 242, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .social-link:hover {
+        background: var(--green);
+      }
+
+      /* ─── WHATSAPP FLOAT ─── */
+      .wa-float {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 200;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .wa-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 36px rgba(37, 211, 102, 0.55);
+      }
+      .wa-float::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        border: 2px solid rgba(37, 211, 102, 0.3);
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+
+      /* ─── ANIMATIONS ─── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 900px) {
+        #hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-text p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-actions {
+          justify-content: center;
+        }
+        .hero-trust {
+          justify-content: center;
+        }
+        .hero-image {
+          display: none;
+        }
+        #sobre {
+          grid-template-columns: 1fr;
+        }
+        .sobre-visual {
+          display: none;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        #como {
+          grid-template-columns: 1fr;
+        }
+        .dep-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 600px) {
+        section {
+          padding: 64px 5vw;
+        }
+        nav {
+          padding: 14px 5vw;
+        }
+        .nav-cta span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="nav-brand">
+        <span>Priscilla Lopes</span>
+        <span>Fisioterapeuta</span>
+      </div>
+      <a
+        href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
+        class="nav-cta"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.52-.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.22-3.74 1.27 1.27-3.72-.24-.38A10 10 0 1 1 12 21.5Zm5.5-7.44c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.07a8.17 8.17 0 0 1-4.08-3.56c-.3-.53.3-.49.87-1.63.1-.2.05-.37-.02-.52s-.68-1.64-.93-2.24c-.24-.59-.49-.51-.68-.52h-.58a1.11 1.11 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.88 5.88 0 0 0 1.23 3.13 13.49 13.49 0 0 0 5.18 4.56c1.94.84 2.7.91 3.67.77a3.1 3.1 0 0 0 2.04-1.44 2.53 2.53 0 0 0 .18-1.44c-.08-.13-.28-.2-.58-.35Z"
+          />
+        </svg>
+        <span>Agendar Avaliação</span>
+      </a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-text reveal">
+        <span class="hero-eyebrow">Fisioterapia Domiciliar · São Paulo</span>
+        <h1>Seu familiar merece cuidado<br /><em>no conforto do lar</em></h1>
+        <p>
+          Especialista em idosos com 30 anos de experiência. Aliviamos dores,
+          restauramos a mobilidade e devolvemos autonomia — sem sair de casa.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.52-.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.22-3.74 1.27 1.27-3.72-.24-.38A10 10 0 1 1 12 21.5Zm5.5-7.44c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.07a8.17 8.17 0 0 1-4.08-3.56c-.3-.53.3-.49.87-1.63.1-.2.05-.37-.02-.52s-.68-1.64-.93-2.24c-.24-.59-.49-.51-.68-.52h-.58a1.11 1.11 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.88 5.88 0 0 0 1.23 3.13 13.49 13.49 0 0 0 5.18 4.56c1.94.84 2.7.91 3.67.77a3.1 3.1 0 0 0 2.04-1.44 2.53 2.53 0 0 0 .18-1.44c-.08-.13-.28-.2-.58-.35Z"
+              />
+            </svg>
+            Falar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <strong>30+</strong>
+            <span>Anos de experiência</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <strong>500+</strong>
+            <span>Pacientes atendidos</span>
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <strong>100%</strong>
+            <span>Atendimento domiciliar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image reveal" style="transition-delay: 0.2s">
+        <div class="hero-img-wrap">
+          <div class="hero-img-bg"></div>
+          <img
+            src="https://static.wixstatic.com/media/80a463_73c4cc9786b9409a865e8aecd8160f9d~mv2.png"
+            alt="Fisioterapeuta Priscilla Lopes"
+            loading="eager"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="hero-badge">
+            <div class="hero-badge-icon">✓</div>
+            <div class="hero-badge-text">
+              <strong>CREFITO Registrada</strong>
+              <span>Profissional habilitada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOR / TRIGGER -->
+    <section id="dores">
+      <div class="reveal">
+        <span class="section-tag">Você se identifica?</span>
+        <h2 class="section-title" style="color: var(--cream)">
+          Sinais de que seu familiar precisa<br />de fisioterapia agora
+        </h2>
+        <p class="section-sub">
+          Ignorar esses sinais pode levar a quedas, perda de independência e
+          piora irreversível da qualidade de vida.
+        </p>
+      </div>
+      <div class="pain-grid reveal" style="transition-delay: 0.15s">
+        <div class="pain-card">
+          <div class="pain-icon">🦴</div>
+          <h3>Dores persistentes</h3>
+          <p>
+            Dor nas costas, articulações ou membros que não melhora com repouso.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🚶</div>
+          <h3>Dificuldade para andar</h3>
+          <p>
+            Passos lentos, arrasto dos pés ou necessidade de apoio constante.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">⚠️</div>
+          <h3>Risco de queda</h3>
+          <p>Tontura, desequilíbrio ou histórico de quedas recentes.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🛏️</div>
+          <h3>Paciente acamado</h3>
+          <p>
+            Dependência total ou parcial para atividades básicas do dia a dia.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🏥</div>
+          <h3>Pós-cirurgia ou AVC</h3>
+          <p>Recuperação após procedimentos ou eventos neurológicos.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">😔</div>
+          <h3>Perda de independência</h3>
+          <p>Limitações que impedem banho, alimentação e locomoção sozinho.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="sobre-visual reveal">
+        <div class="sobre-img-frame">
+          <img
+            src="foto doutora priscilla fisioterapeuta-.png"
+            alt="Fisioterapeuta Priscilla Lopes"
+            loading="lazy"
+            onerror="this.parentElement.style.background = '#e8d5bb'"
+          />
+        </div>
+        <div class="sobre-cred">
+          <p>Especialista em</p>
+          <strong>Gerontologia</strong>
+        </div>
+      </div>
+      <div class="sobre-text reveal" style="transition-delay: 0.15s">
+        <span class="section-tag">Quem cuida de você</span>
+        <h2 class="section-title">
+          Dra. Priscilla Lopes,<br /><em>30 anos dedicados</em><br />ao idoso
+        </h2>
+        <p class="section-sub">
+          Ao longo da minha trajetória, acompanhei de perto as dores e
+          limitações que podem surgir na terceira idade — e sei o quanto isso
+          preocupa os filhos. Cada dor tem uma história. Meu compromisso é
+          escutá-la com atenção, identificar a verdadeira causa e aplicar o
+          tratamento mais adequado.
+        </p>
+        <div class="credentials">
+          <div class="cred-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            <div>
+              <strong>Graduação — Universidade Cidade de São Paulo</strong>
+              Formação sólida em fisioterapia clínica e reabilitação.
+            </div>
+          </div>
+          <div class="cred-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <div>
+              <strong>Especialização em Gerontologia — Albert Einstein</strong>
+              Instituto Israelita de Ensino e Pesquisa.
+            </div>
+          </div>
+          <div class="cred-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <div>
+              <strong
+                >Especialização em RPG (Reeducação Postural Global)</strong
+              >
+              Técnica avançada para alinhamento e mobilidade.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="services-header reveal">
+        <span class="section-tag">O que oferecemos</span>
+        <h2 class="section-title">
+          Tratamentos especializados<br /><em>no conforto da sua casa</em>
+        </h2>
+        <p class="section-sub">
+          Cuidado humanizado, individualizado e com protocolo científico
+          adaptado às necessidades do seu familiar.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <h3>Mobilidade & Autonomia</h3>
+          <p>
+            Fortalecimento muscular, equilíbrio e prevenção de quedas.
+            Tratamentos que promovem independência nas atividades diárias, com
+            cuidado humanizado e personalizado.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Equilíbrio</span>
+            <span class="service-tag">Força muscular</span>
+            <span class="service-tag">Prevenção de quedas</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.1s">
+          <div class="service-num">02</div>
+          <h3>Reabilitação Funcional</h3>
+          <p>
+            Recuperação após quedas, lesões ou cirurgias. Protocolos para
+            retomada rápida e segura das atividades cotidianas com máxima
+            qualidade de vida.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Pós-cirurgia</span>
+            <span class="service-tag">Pós-AVC</span>
+            <span class="service-tag">Fraturas</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay: 0.2s">
+          <div class="service-num">03</div>
+          <h3>Consultoria para Cuidadores</h3>
+          <p>
+            Orientação especializada para famílias e cuidadores de idosos
+            acamados. Técnicas de manuseio, banho, posicionamento e exercícios
+            domiciliares seguros.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Idoso acamado</span>
+            <span class="service-tag">Cuidadores</span>
+            <span class="service-tag">Família</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como">
+      <div class="reveal">
+        <span class="section-tag">Sem complicações</span>
+        <h2 class="section-title">
+          Como funciona o<br /><em>atendimento domiciliar?</em>
+        </h2>
+        <p class="section-sub">
+          Processo simples, ágil e totalmente adaptado à sua rotina. Sem
+          deslocamentos, sem filas, sem espera.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Entre em contato pelo WhatsApp</h3>
+              <p>
+                Envie uma mensagem relatando a situação do paciente e
+                localização. Respondemos rapidamente.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Avaliação fisioterapêutica</h3>
+              <p>
+                A Dra. Priscilla vai até sua residência para avaliação completa
+                e diagnóstico funcional.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Plano de tratamento personalizado</h3>
+              <p>
+                Montamos um protocolo individualizado com metas claras e prazo
+                estimado de evolução.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Sessões regulares no seu lar</h3>
+              <p>
+                Acompanhamento frequente com reavaliações periódicas para
+                garantir evolução contínua.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="como-visual reveal" style="transition-delay: 0.2s">
+        <h3>Por que escolher o atendimento domiciliar?</h3>
+        <p>
+          Pesquisas mostram que idosos se recuperam mais rápido e com menos
+          estresse no próprio ambiente.
+        </p>
+        <div class="como-features">
+          <div class="como-feat">
+            <div class="como-feat-icon">🏠</div>
+            <span>Sem risco de exposição a infecções hospitalares</span>
+          </div>
+          <div class="como-feat">
+            <div class="como-feat-icon">💆</div>
+            <span>Ambiente familiar reduz ansiedade e melhora adesão</span>
+          </div>
+          <div class="como-feat">
+            <div class="como-feat-icon">🚗</div>
+            <span>Elimina deslocamentos cansativos para o paciente</span>
+          </div>
+          <div class="como-feat">
+            <div class="como-feat-icon">👁️</div>
+            <span>Cuidador e família participam do processo</span>
+          </div>
+          <div class="como-feat">
+            <div class="como-feat-icon">📋</div>
+            <span>Exercícios adaptados ao espaço real do paciente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="dep-header reveal">
+        <span class="section-tag">O que dizem as famílias</span>
+        <h2 class="section-title">Resultados que <em>transformam vidas</em></h2>
+      </div>
+      <div class="dep-grid">
+        <div class="dep-card reveal">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">
+            "Minha mãe de 78 anos estava com dores terríveis no quadril e mal
+            conseguia caminhar. Após 2 meses de sessões com a Dra. Priscilla,
+            ela voltou a fazer caminhadas leves. Profissional incrível, muito
+            dedicada e atenciosa."
+          </p>
+          <div class="dep-author">
+            <div class="dep-avatar">M</div>
+            <div>
+              <strong>Marcia F.</strong>
+              <span>Filha de paciente · São Paulo</span>
+            </div>
+          </div>
+        </div>
+        <div class="dep-card reveal" style="transition-delay: 0.1s">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">
+            "Meu pai passou por uma cirurgia de joelho e a recuperação foi muito
+            mais rápida graças ao trabalho da Priscilla. O fato de ela vir até a
+            casa fez toda a diferença — ele ficou mais tranquilo e confiante
+            durante as sessões."
+          </p>
+          <div class="dep-author">
+            <div class="dep-avatar">R</div>
+            <div>
+              <strong>Roberto A.</strong>
+              <span>Filho de paciente · Tatuapé</span>
+            </div>
+          </div>
+        </div>
+        <div class="dep-card reveal" style="transition-delay: 0.2s">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">
+            "A consultoria que a Dra. Priscilla nos deu foi fundamental.
+            Aprendemos como movimentar nosso avô acamado corretamente, evitar
+            escaras e fazer exercícios simples. Ela é extremamente humana e
+            paciente com toda a família."
+          </p>
+          <div class="dep-author">
+            <div class="dep-avatar">A</div>
+            <div>
+              <strong>Ana Paula S.</strong>
+              <span>Neta de paciente · Vila Formosa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta">
+      <div class="reveal">
+        <span class="section-tag">Dê o primeiro passo</span>
+        <h2 class="section-title">
+          Agende uma avaliação e<br /><em>comece a transformação hoje</em>
+        </h2>
+        <p class="section-sub">
+          Atendimento em São Paulo. Fale agora pelo WhatsApp e receba um retorno
+          rápido para agendar a avaliação gratuita.
+        </p>
+        <div class="cta-group">
+          <a
+            href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar"
+            class="btn-cta-main"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.52-.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.22-3.74 1.27 1.27-3.72-.24-.38A10 10 0 1 1 12 21.5Zm5.5-7.44c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.07a8.17 8.17 0 0 1-4.08-3.56c-.3-.53.3-.49.87-1.63.1-.2.05-.37-.02-.52s-.68-1.64-.93-2.24c-.24-.59-.49-.51-.68-.52h-.58a1.11 1.11 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.88 5.88 0 0 0 1.23 3.13 13.49 13.49 0 0 0 5.18 4.56c1.94.84 2.7.91 3.67.77a3.1 3.1 0 0 0 2.04-1.44 2.53 2.53 0 0 0 .18-1.44c-.08-.13-.28-.2-.58-.35Z"
+              />
+            </svg>
+            Falar pelo WhatsApp agora
+          </a>
+          <a href="tel:+5511958137599" class="btn-cta-sec">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.09-1.09a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"
+              />
+            </svg>
+            (11) 95813-7599
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span>Priscilla Lopes</span>
+          <span class="tagline">Fisioterapeuta · Gerontologia</span>
+          <p>
+            Cuidado que acolhe, tratamento que transforma. Atendimento
+            domiciliar especializado em idosos em São Paulo.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Mobilidade & Autonomia</a></li>
+            <li><a href="#servicos">Reabilitação Funcional</a></li>
+            <li><a href="#servicos">Consultoria para Cuidadores</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/5511958137599" target="_blank"
+                >(11) 95813-7599</a
+              >
+            </li>
+            <li><a href="#">São Paulo, SP</a></li>
+            <li>
+              <a
+                href="https://www.instagram.com/priscillalopesfisioterapeuta/"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/share/1BFQKuXSjo/"
+                target="_blank"
+                >Facebook</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span
+          >© 2026 Fisioterapeuta Priscilla Lopes. Todos os direitos
+          reservados.</span
+        >
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/priscillalopesfisioterapeuta/"
+            class="social-link"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/share/1BFQKuXSjo/"
+            class="social-link"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://wa.me/5511958137599"
+            class="social-link"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.52-.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.22-3.74 1.27 1.27-3.72-.24-.38A10 10 0 1 1 12 21.5Zm5.5-7.44c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.07a8.17 8.17 0 0 1-4.08-3.56c-.3-.53.3-.49.87-1.63.1-.2.05-.37-.02-.52s-.68-1.64-.93-2.24c-.24-.59-.49-.51-.68-.52h-.58a1.11 1.11 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.88 5.88 0 0 0 1.23 3.13 13.49 13.49 0 0 0 5.18 4.56c1.94.84 2.7.91 3.67.77a3.1 3.1 0 0 0 2.04-1.44 2.53 2.53 0 0 0 .18-1.44c-.08-.13-.28-.2-.58-.35Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a
+      href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar"
+      class="wa-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Falar pelo WhatsApp"
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M20.52 3.48A12 12 0 0 0 3.48 20.52L2 22l1.52-.52A12 12 0 1 0 20.52 3.48Zm-8.52 18a10 10 0 0 1-5.1-1.4l-.36-.22-3.74 1.27 1.27-3.72-.24-.38A10 10 0 1 1 12 21.5Zm5.5-7.44c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.07a8.17 8.17 0 0 1-4.08-3.56c-.3-.53.3-.49.87-1.63.1-.2.05-.37-.02-.52s-.68-1.64-.93-2.24c-.24-.59-.49-.51-.68-.52h-.58a1.11 1.11 0 0 0-.8.37 3.39 3.39 0 0 0-1.06 2.52 5.88 5.88 0 0 0 1.23 3.13 13.49 13.49 0 0 0 5.18 4.56c1.94.84 2.7.91 3.67.77a3.1 3.1 0 0 0 2.04-1.44 2.53 2.53 0 0 0 .18-1.44c-.08-.13-.28-.2-.58-.35Z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      // Nav scroll effect
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 20);
+      });
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
