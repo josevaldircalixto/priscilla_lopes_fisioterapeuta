@@ -1020,37 +1020,35 @@
         }
       }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18020905568"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-18020905568");
+    </script>
+    <!-- Event snippet for Clique de saída conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-18020905568/MgfFCNCjkpEcEODkhJFD",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=AW-18020905568"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "AW-18020905568");
-  </script>
-  <!-- Event snippet for Clique de saída conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-  <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof url != "undefined") {
-          window.location = url;
-        }
-      };
-      gtag("event", "conversion", {
-        send_to: "AW-18020905568/MgfFCNCjkpEcEODkhJFD",
-        event_callback: callback,
-      });
-      return false;
-    }
-  </script>
 
   <body>
     <!-- NAV -->
@@ -1060,6 +1058,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <span>Fisioterapeuta</span>
       </div>
       <a
+        onclick="
+          return gtag_report_conversion(
+            'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+          );
+        "
         href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
         class="nav-cta"
         target="_blank"
@@ -1085,6 +1088,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </p>
         <div class="hero-actions">
           <a
+            onclick="
+              return gtag_report_conversion(
+                'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+              );
+            "
             href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
             class="btn-primary"
             target="_blank"
@@ -1488,7 +1496,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         </p>
         <div class="cta-group">
           <a
-            href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar"
+            onclick="
+              return gtag_report_conversion(
+                'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+              );
+            "
+            href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
             class="btn-cta-main"
             target="_blank"
             rel="noopener"
@@ -1542,7 +1555,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <h4>Contato</h4>
           <ul>
             <li>
-              <a href="https://wa.me/5511958137599" target="_blank"
+              <a
+                onclick="
+                  return gtag_report_conversion(
+                    'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+                  );
+                "
+                href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
+                target="_blank"
                 >(11) 95813-7599</a
               >
             </li>
@@ -1595,7 +1615,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </svg>
           </a>
           <a
-            href="https://wa.me/5511958137599"
+            onclick="
+              return gtag_report_conversion(
+                'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+              );
+            "
+            href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
             class="social-link"
             target="_blank"
             aria-label="WhatsApp"
@@ -1612,7 +1637,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
     <!-- WHATSAPP FLOAT -->
     <a
-      href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia%20domiciliar"
+      onclick="
+        return gtag_report_conversion(
+          'https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia',
+        );
+      "
+      href="https://wa.me/5511958137599?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20de%20fisioterapia"
       class="wa-float"
       target="_blank"
       rel="noopener"
